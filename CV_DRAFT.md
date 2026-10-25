@@ -7,12 +7,12 @@ Use the following drafts only after personally running and explaining the projec
 ## Trading / research version (maximum two bullets)
 
 - Developed an AI-assisted market-making research project comparing three quoting policies across five synthetic regimes and 100 paired evaluation seeds per regime; examined inventory, drawdown and net P&L rather than assuming profitability.
-- Evaluated execution–risk trade-offs in 3,480 simulated research runs, including fee, order-intensity, inventory-limit and volatility sensitivities; observed 75% lower mean absolute inventory with inventory skew in the stable scenario, alongside lower mean simulated P&L.
+- Evaluated 5,480 synthetic strategy runs, including original sensitivities, width/skew ablations and an identical-price adverse-selection control; distinguished robust inventory reductions from seed-sensitive mean-profit rankings.
 
 ## Tech version (maximum two bullets)
 
-- Built an AI-assisted Python/Streamlit simulator with turn-based human–algorithm play, an offline strategy research interface and reproducible exogenous market tapes shared across policies.
-- Verified execution accounting, hard inventory limits, quote bounds and causal strategy observations with 36 automated tests; independently reconstructed 9,015 saved equity marks from execution records using decimal arithmetic.
+- Built an AI-assisted Python/Streamlit simulator with turn-based human–algorithm play, five causal quoting policies, an offline research interface and matched exogenous market tapes.
+- Verified execution accounting, hard inventory limits, quote bounds and causal strategy observations with 59 automated tests; independently reconstructed 9,015 saved equity marks from execution records using decimal arithmetic.
 
 ## Personal evidence required before adoption
 
@@ -23,3 +23,8 @@ Use the following drafts only after personally running and explaining the projec
 5. Explain the synthetic fill assumptions, terminal marking and why a relative improvement is not evidence of real profitability.
 
 After these checks, tailor the verbs to your actual contribution. If you only explored and audited an AI-generated implementation, “Investigated and validated an AI-assisted…” is more accurate than claiming independent development. The existing CV master was not edited.
+
+The follow-up code and results were also AI-assisted. The original five-regime
+main experiment compares three policies; the follow-up compares five policies
+in three selected regimes. Do not imply all five policies were evaluated in
+all five regimes, or that 5,480 runs are independent market paths.

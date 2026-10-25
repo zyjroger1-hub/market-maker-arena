@@ -1,217 +1,217 @@
 scenario,contrast,metric,n,mean_difference,ci_low,ci_high,setting
 Stable,Inventory - Fixed,pnl,30,-1.2141259758675005,-3.515481100073819,1.0872291483388177,reference
-Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,reference
-Stable,Inventory - Fixed,max_drawdown,30,-3.5909889506674517,-4.291734922864665,-2.890242978470239,reference
-Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,reference
 Stable,Adaptive - Inventory,pnl,30,-0.10814177028229703,-0.340487981000805,0.12420444043621094,reference
-Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,reference
-Stable,Adaptive - Inventory,max_drawdown,30,0.07814650742348021,-0.026903548295339502,0.18319656314229993,reference
-Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,reference
 Stable,Adaptive - Fixed,pnl,30,-1.3222677461497976,-3.5960688421486906,0.9515333498490954,reference
+Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,reference
+Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,reference
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-3.394944444444445,-3.8337140963384773,-2.9561747925504127,reference
+Stable,Inventory - Fixed,max_drawdown,30,-3.5909889506674517,-4.291734922864665,-2.890242978470239,reference
+Stable,Adaptive - Inventory,max_drawdown,30,0.07814650742348021,-0.026903548295339502,0.18319656314229993,reference
 Stable,Adaptive - Fixed,max_drawdown,30,-3.5128424432439713,-4.178181112776974,-2.8475037737109687,reference
+Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,reference
+Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,reference
 Stable,Adaptive - Fixed,fills,30,14.766666666666667,10.66132621615311,18.872007117180225,reference
 Adverse selection,Inventory - Fixed,pnl,30,-1.8039747411325757,-5.062186469938958,1.454236987673806,reference
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,reference
-Adverse selection,Inventory - Fixed,max_drawdown,30,-6.66569587238755,-8.43131865495651,-4.90007308981859,reference
-Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,reference
 Adverse selection,Adaptive - Inventory,pnl,30,5.168235591027406,4.444077349813339,5.892393832241472,reference
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,reference
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.812647715868115,-5.535503760482564,-4.089791671253666,reference
-Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,reference
 Adverse selection,Adaptive - Fixed,pnl,30,3.3642608498948294,-0.1300760467722979,6.858597746561957,reference
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,reference
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,reference
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-4.125722222222223,-4.591794488205509,-3.6596499562389377,reference
+Adverse selection,Inventory - Fixed,max_drawdown,30,-6.66569587238755,-8.43131865495651,-4.90007308981859,reference
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.812647715868115,-5.535503760482564,-4.089791671253666,reference
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-11.478343588255665,-13.675428513416417,-9.281258663094913,reference
+Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,reference
+Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,reference
 Adverse selection,Adaptive - Fixed,fills,30,-60.666666666666664,-63.83562858350312,-57.497704749830206,reference
 Stable,Inventory - Fixed,pnl,30,-1.1561017901313486,-3.4570956577244445,1.1448920774617475,fee_bps=0
-Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=0
-Stable,Inventory - Fixed,max_drawdown,30,-3.50562521201288,-4.182173984698953,-2.829076439326807,fee_bps=0
-Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=0
 Stable,Adaptive - Inventory,pnl,30,-0.09254287456636424,-0.3240201860867094,0.1389344369539809,fee_bps=0
-Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,fee_bps=0
-Stable,Adaptive - Inventory,max_drawdown,30,0.06871018335726452,-0.03072564318449647,0.1681460098990255,fee_bps=0
-Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,fee_bps=0
 Stable,Adaptive - Fixed,pnl,30,-1.248644664697713,-3.521623729605016,1.02433440020959,fee_bps=0
+Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=0
+Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,fee_bps=0
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-3.394944444444445,-3.8337140963384773,-2.9561747925504127,fee_bps=0
+Stable,Inventory - Fixed,max_drawdown,30,-3.50562521201288,-4.182173984698953,-2.829076439326807,fee_bps=0
+Stable,Adaptive - Inventory,max_drawdown,30,0.06871018335726452,-0.03072564318449647,0.1681460098990255,fee_bps=0
 Stable,Adaptive - Fixed,max_drawdown,30,-3.436915028655615,-4.079132394633578,-2.7946976626776525,fee_bps=0
+Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=0
+Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,fee_bps=0
 Stable,Adaptive - Fixed,fills,30,14.766666666666667,10.66132621615311,18.872007117180225,fee_bps=0
 Adverse selection,Inventory - Fixed,pnl,30,-1.746056465523543,-5.005586810113012,1.5134738790659257,fee_bps=0
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=0
-Adverse selection,Inventory - Fixed,max_drawdown,30,-6.993968558755356,-8.734139815948058,-5.2537973015626545,fee_bps=0
-Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=0
 Adverse selection,Adaptive - Inventory,pnl,30,4.807535317757053,4.08556744423195,5.529503191282156,fee_bps=0
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,fee_bps=0
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.364836501887718,-5.082764678919986,-3.646908324855451,fee_bps=0
-Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,fee_bps=0
 Adverse selection,Adaptive - Fixed,pnl,30,3.06147885223351,-0.4324379099752931,6.555395614442313,fee_bps=0
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=0
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,fee_bps=0
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-4.125722222222223,-4.591794488205509,-3.6596499562389377,fee_bps=0
+Adverse selection,Inventory - Fixed,max_drawdown,30,-6.993968558755356,-8.734139815948058,-5.2537973015626545,fee_bps=0
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.364836501887718,-5.082764678919986,-3.646908324855451,fee_bps=0
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-11.358805060643075,-13.516202981144492,-9.201407140141658,fee_bps=0
+Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=0
+Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,fee_bps=0
 Adverse selection,Adaptive - Fixed,fills,30,-60.666666666666664,-63.83562858350312,-57.497704749830206,fee_bps=0
 Stable,Inventory - Fixed,pnl,30,-1.3881985330770477,-3.6912813353370044,0.9148842691829093,fee_bps=2
-Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=2
-Stable,Inventory - Fixed,max_drawdown,30,-3.8476430732239653,-4.624342605278436,-3.0709435411694948,fee_bps=2
-Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=2
 Stable,Adaptive - Inventory,pnl,30,-0.15493845742445653,-0.3923215927761924,0.08244467792727933,fee_bps=2
-Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,fee_bps=2
-Stable,Adaptive - Inventory,max_drawdown,30,0.09702435294608829,-0.02209733314960205,0.21614603904177862,fee_bps=2
-Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,fee_bps=2
 Stable,Adaptive - Fixed,pnl,30,-1.5431369905015042,-3.8205058603553814,0.7342318793523728,fee_bps=2
+Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=2
+Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,fee_bps=2
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-3.394944444444445,-3.8337140963384773,-2.9561747925504127,fee_bps=2
+Stable,Inventory - Fixed,max_drawdown,30,-3.8476430732239653,-4.624342605278436,-3.0709435411694948,fee_bps=2
+Stable,Adaptive - Inventory,max_drawdown,30,0.09702435294608829,-0.02209733314960205,0.21614603904177862,fee_bps=2
 Stable,Adaptive - Fixed,max_drawdown,30,-3.750618720277877,-4.494603343132505,-3.006634097423249,fee_bps=2
+Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=2
+Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,fee_bps=2
 Stable,Adaptive - Fixed,fills,30,14.766666666666667,10.66132621615311,18.872007117180225,fee_bps=2
 Adverse selection,Inventory - Fixed,pnl,30,-1.9777295679489422,-5.232439310335541,1.2769801744376563,fee_bps=2
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=2
-Adverse selection,Inventory - Fixed,max_drawdown,30,-5.651987052631012,-7.538387104535951,-3.7655870007260726,fee_bps=2
-Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=2
 Adverse selection,Adaptive - Inventory,pnl,30,6.2503364108267006,5.518043809642712,6.9826290120106895,fee_bps=2
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,fee_bps=2
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-6.165624607068579,-6.8911939774052815,-5.440055236731876,fee_bps=2
-Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,fee_bps=2
 Adverse selection,Adaptive - Fixed,pnl,30,4.272606842877758,0.7765608272231139,7.768652858532403,fee_bps=2
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,fee_bps=2
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,fee_bps=2
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-4.125722222222223,-4.591794488205509,-3.6596499562389377,fee_bps=2
+Adverse selection,Inventory - Fixed,max_drawdown,30,-5.651987052631012,-7.538387104535951,-3.7655870007260726,fee_bps=2
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-6.165624607068579,-6.8911939774052815,-5.440055236731876,fee_bps=2
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-11.81761165969959,-14.12924249421594,-9.50598082518324,fee_bps=2
+Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,fee_bps=2
+Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,fee_bps=2
 Adverse selection,Adaptive - Fixed,fills,30,-60.666666666666664,-63.83562858350312,-57.497704749830206,fee_bps=2
 Stable,Inventory - Fixed,pnl,30,-0.6257703895844922,-2.6188028829378336,1.3672621037688493,arrival_rate=0.4
-Stable,Inventory - Fixed,avg_abs_inventory,30,-2.9951111111111106,-3.568144381488427,-2.4220778407337944,arrival_rate=0.4
-Stable,Inventory - Fixed,max_drawdown,30,-3.558041136000429,-4.517154945409314,-2.598927326591544,arrival_rate=0.4
-Stable,Inventory - Fixed,fills,30,6.933333333333334,4.800792220854929,9.065874445811737,arrival_rate=0.4
 Stable,Adaptive - Inventory,pnl,30,-0.2034987791348006,-0.44446760197679835,0.037470043707197115,arrival_rate=0.4
-Stable,Adaptive - Inventory,avg_abs_inventory,30,0.014277777777777756,-0.029335811117380026,0.05789136667293554,arrival_rate=0.4
-Stable,Adaptive - Inventory,max_drawdown,30,0.07829745144341965,-0.06191151226112243,0.21850641514796174,arrival_rate=0.4
-Stable,Adaptive - Inventory,fills,30,1.5,-0.19492859603180301,3.194928596031803,arrival_rate=0.4
 Stable,Adaptive - Fixed,pnl,30,-0.8292691687192928,-2.877463596820913,1.2189252593823272,arrival_rate=0.4
+Stable,Inventory - Fixed,avg_abs_inventory,30,-2.9951111111111106,-3.568144381488427,-2.4220778407337944,arrival_rate=0.4
+Stable,Adaptive - Inventory,avg_abs_inventory,30,0.014277777777777756,-0.029335811117380026,0.05789136667293554,arrival_rate=0.4
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-2.9808333333333343,-3.544807329178408,-2.4168593374882605,arrival_rate=0.4
+Stable,Inventory - Fixed,max_drawdown,30,-3.558041136000429,-4.517154945409314,-2.598927326591544,arrival_rate=0.4
+Stable,Adaptive - Inventory,max_drawdown,30,0.07829745144341965,-0.06191151226112243,0.21850641514796174,arrival_rate=0.4
 Stable,Adaptive - Fixed,max_drawdown,30,-3.4797436845570093,-4.433290641157976,-2.526196727956043,arrival_rate=0.4
+Stable,Inventory - Fixed,fills,30,6.933333333333334,4.800792220854929,9.065874445811737,arrival_rate=0.4
+Stable,Adaptive - Inventory,fills,30,1.5,-0.19492859603180301,3.194928596031803,arrival_rate=0.4
 Stable,Adaptive - Fixed,fills,30,8.433333333333334,5.891894064716718,10.97477260194995,arrival_rate=0.4
 Adverse selection,Inventory - Fixed,pnl,30,-1.181603497209835,-3.7757717155555395,1.4125647211358694,arrival_rate=0.4
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-2.9951111111111106,-3.568144381488427,-2.4220778407337944,arrival_rate=0.4
-Adverse selection,Inventory - Fixed,max_drawdown,30,-6.7999990337610745,-8.676148213323225,-4.923849854198925,arrival_rate=0.4
-Adverse selection,Inventory - Fixed,fills,30,6.933333333333334,4.800792220854929,9.065874445811737,arrival_rate=0.4
 Adverse selection,Adaptive - Inventory,pnl,30,3.451901699261422,2.4484732236472344,4.455330174875609,arrival_rate=0.4
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6693333333333334,-0.7448696087202903,-0.5937970579463766,arrival_rate=0.4
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-3.4278003222958433,-4.121980346073386,-2.7336202985183005,arrival_rate=0.4
-Adverse selection,Adaptive - Inventory,fills,30,-44.1,-47.02602364631006,-41.173976353689945,arrival_rate=0.4
 Adverse selection,Adaptive - Fixed,pnl,30,2.270298202051587,-0.7792730688293585,5.319869472932533,arrival_rate=0.4
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-2.9951111111111106,-3.568144381488427,-2.4220778407337944,arrival_rate=0.4
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6693333333333334,-0.7448696087202903,-0.5937970579463766,arrival_rate=0.4
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-3.6644444444444444,-4.272108179500474,-3.0567807093884145,arrival_rate=0.4
+Adverse selection,Inventory - Fixed,max_drawdown,30,-6.7999990337610745,-8.676148213323225,-4.923849854198925,arrival_rate=0.4
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-3.4278003222958433,-4.121980346073386,-2.7336202985183005,arrival_rate=0.4
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-10.227799356056918,-12.290651763590288,-8.164946948523548,arrival_rate=0.4
+Adverse selection,Inventory - Fixed,fills,30,6.933333333333334,4.800792220854929,9.065874445811737,arrival_rate=0.4
+Adverse selection,Adaptive - Inventory,fills,30,-44.1,-47.02602364631006,-41.173976353689945,arrival_rate=0.4
 Adverse selection,Adaptive - Fixed,fills,30,-37.166666666666664,-40.353406026296454,-33.979927307036874,arrival_rate=0.4
 Stable,Inventory - Fixed,pnl,30,-1.898521599508361,-3.6422769862366535,-0.15476621278006863,arrival_rate=1.6
-Stable,Inventory - Fixed,avg_abs_inventory,30,-3.5292777777777777,-4.019938247480279,-3.0386173080752767,arrival_rate=1.6
-Stable,Inventory - Fixed,max_drawdown,30,-3.2781141528311006,-3.7659991833502637,-2.7902291223119375,arrival_rate=1.6
-Stable,Inventory - Fixed,fills,30,18.766666666666666,14.989483382484037,22.543849950849292,arrival_rate=1.6
 Stable,Adaptive - Inventory,pnl,30,-0.17219322541586735,-0.40919658116895086,0.06481013033721617,arrival_rate=1.6
-Stable,Adaptive - Inventory,avg_abs_inventory,30,0.030388888888888906,-0.001991824076414187,0.062769601854192,arrival_rate=1.6
-Stable,Adaptive - Inventory,max_drawdown,30,0.0709489121939138,0.016010798466303593,0.125887025921524,arrival_rate=1.6
-Stable,Adaptive - Inventory,fills,30,3.7666666666666666,1.6011256853310063,5.932207648002327,arrival_rate=1.6
 Stable,Adaptive - Fixed,pnl,30,-2.0707148249242286,-3.8435495502292225,-0.297880099619235,arrival_rate=1.6
+Stable,Inventory - Fixed,avg_abs_inventory,30,-3.5292777777777777,-4.019938247480279,-3.0386173080752767,arrival_rate=1.6
+Stable,Adaptive - Inventory,avg_abs_inventory,30,0.030388888888888906,-0.001991824076414187,0.062769601854192,arrival_rate=1.6
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-3.4988888888888896,-3.978265870676588,-3.019511907101191,arrival_rate=1.6
+Stable,Inventory - Fixed,max_drawdown,30,-3.2781141528311006,-3.7659991833502637,-2.7902291223119375,arrival_rate=1.6
+Stable,Adaptive - Inventory,max_drawdown,30,0.0709489121939138,0.016010798466303593,0.125887025921524,arrival_rate=1.6
 Stable,Adaptive - Fixed,max_drawdown,30,-3.207165240637187,-3.681362121384508,-2.732968359889866,arrival_rate=1.6
+Stable,Inventory - Fixed,fills,30,18.766666666666666,14.989483382484037,22.543849950849292,arrival_rate=1.6
+Stable,Adaptive - Inventory,fills,30,3.7666666666666666,1.6011256853310063,5.932207648002327,arrival_rate=1.6
 Stable,Adaptive - Fixed,fills,30,22.533333333333335,17.74664478833112,27.32002187833555,arrival_rate=1.6
 Adverse selection,Inventory - Fixed,pnl,30,-1.0074048785059253,-4.254983317072502,2.2401735600606516,arrival_rate=1.6
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.5292777777777777,-4.019938247480279,-3.0386173080752767,arrival_rate=1.6
-Adverse selection,Inventory - Fixed,max_drawdown,30,-7.100332216410789,-9.459304122700825,-4.741360310120752,arrival_rate=1.6
-Adverse selection,Inventory - Fixed,fills,30,18.766666666666666,14.989483382484037,22.543849950849292,arrival_rate=1.6
 Adverse selection,Adaptive - Inventory,pnl,30,6.223417663005239,5.319407617674902,7.127427708335575,arrival_rate=1.6
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6515555555555557,-0.7073689170786879,-0.5957421940324235,arrival_rate=1.6
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-5.598648620891132,-6.5109801361182855,-4.686317105663979,arrival_rate=1.6
-Adverse selection,Adaptive - Inventory,fills,30,-105.03333333333333,-109.06516968930524,-101.00149697736143,arrival_rate=1.6
 Adverse selection,Adaptive - Fixed,pnl,30,5.216012784499314,1.517713339825152,8.914312229173476,arrival_rate=1.6
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.5292777777777777,-4.019938247480279,-3.0386173080752767,arrival_rate=1.6
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6515555555555557,-0.7073689170786879,-0.5957421940324235,arrival_rate=1.6
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-4.180833333333333,-4.687378459036535,-3.674288207630132,arrival_rate=1.6
+Adverse selection,Inventory - Fixed,max_drawdown,30,-7.100332216410789,-9.459304122700825,-4.741360310120752,arrival_rate=1.6
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-5.598648620891132,-6.5109801361182855,-4.686317105663979,arrival_rate=1.6
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-12.69898083730192,-15.503106673868018,-9.894855000735824,arrival_rate=1.6
+Adverse selection,Inventory - Fixed,fills,30,18.766666666666666,14.989483382484037,22.543849950849292,arrival_rate=1.6
+Adverse selection,Adaptive - Inventory,fills,30,-105.03333333333333,-109.06516968930524,-101.00149697736143,arrival_rate=1.6
 Adverse selection,Adaptive - Fixed,fills,30,-86.26666666666667,-90.54210742480537,-81.99122590852797,arrival_rate=1.6
 Stable,Inventory - Fixed,pnl,30,-0.2906421880502724,-1.2044289866210318,0.623144610520487,inventory_limit=5
-Stable,Inventory - Fixed,avg_abs_inventory,30,-1.438888888888889,-1.581177833321694,-1.2965999444560843,inventory_limit=5
-Stable,Inventory - Fixed,max_drawdown,30,-1.3824107838813384,-1.6156340604112966,-1.1491875073513802,inventory_limit=5
-Stable,Inventory - Fixed,fills,30,18.866666666666667,15.32322983108758,22.410103502245754,inventory_limit=5
 Stable,Adaptive - Inventory,pnl,30,-0.11739563543578697,-0.35425522782617813,0.1194639569546042,inventory_limit=5
-Stable,Adaptive - Inventory,avg_abs_inventory,30,0.03350000000000002,-0.005597754193319378,0.07259775419331943,inventory_limit=5
-Stable,Adaptive - Inventory,max_drawdown,30,0.08818656581715914,-0.01636603127633368,0.19273916291065196,inventory_limit=5
-Stable,Adaptive - Inventory,fills,30,3.2,1.252551852103332,5.147448147896668,inventory_limit=5
 Stable,Adaptive - Fixed,pnl,30,-0.4080378234860594,-1.3380762700768618,0.5220006231047432,inventory_limit=5
+Stable,Inventory - Fixed,avg_abs_inventory,30,-1.438888888888889,-1.581177833321694,-1.2965999444560843,inventory_limit=5
+Stable,Adaptive - Inventory,avg_abs_inventory,30,0.03350000000000002,-0.005597754193319378,0.07259775419331943,inventory_limit=5
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-1.4053888888888888,-1.540738949485645,-1.2700388282921327,inventory_limit=5
+Stable,Inventory - Fixed,max_drawdown,30,-1.3824107838813384,-1.6156340604112966,-1.1491875073513802,inventory_limit=5
+Stable,Adaptive - Inventory,max_drawdown,30,0.08818656581715914,-0.01636603127633368,0.19273916291065196,inventory_limit=5
 Stable,Adaptive - Fixed,max_drawdown,30,-1.2942242180641794,-1.5107441374434118,-1.077704298684947,inventory_limit=5
+Stable,Inventory - Fixed,fills,30,18.866666666666667,15.32322983108758,22.410103502245754,inventory_limit=5
+Stable,Adaptive - Inventory,fills,30,3.2,1.252551852103332,5.147448147896668,inventory_limit=5
 Stable,Adaptive - Fixed,fills,30,22.066666666666666,17.63332897522922,26.500004358104114,inventory_limit=5
 Adverse selection,Inventory - Fixed,pnl,30,-0.6223169950815038,-2.6556735679176318,1.4110395777546239,inventory_limit=5
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-1.438888888888889,-1.581177833321694,-1.2965999444560843,inventory_limit=5
-Adverse selection,Inventory - Fixed,max_drawdown,30,-2.689991614828068,-3.9246307383811976,-1.4553524912749387,inventory_limit=5
-Adverse selection,Inventory - Fixed,fills,30,18.866666666666667,15.32322983108758,22.410103502245754,inventory_limit=5
 Adverse selection,Adaptive - Inventory,pnl,30,5.232258659091167,4.511483772059453,5.953033546122882,inventory_limit=5
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6931111111111111,-0.7507052852998313,-0.635516936922391,inventory_limit=5
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.8382123748499,-5.5766078831433905,-4.099816866556409,inventory_limit=5
-Adverse selection,Adaptive - Inventory,fills,30,-72.1,-74.88284989546216,-69.31715010453783,inventory_limit=5
 Adverse selection,Adaptive - Fixed,pnl,30,4.609941664009663,2.194139991524142,7.025743336495184,inventory_limit=5
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-1.438888888888889,-1.581177833321694,-1.2965999444560843,inventory_limit=5
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6931111111111111,-0.7507052852998313,-0.635516936922391,inventory_limit=5
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-2.132,-2.290165759821133,-1.973834240178867,inventory_limit=5
+Adverse selection,Inventory - Fixed,max_drawdown,30,-2.689991614828068,-3.9246307383811976,-1.4553524912749387,inventory_limit=5
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.8382123748499,-5.5766078831433905,-4.099816866556409,inventory_limit=5
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-7.5282039896779676,-9.16544722669247,-5.8909607526634655,inventory_limit=5
+Adverse selection,Inventory - Fixed,fills,30,18.866666666666667,15.32322983108758,22.410103502245754,inventory_limit=5
+Adverse selection,Adaptive - Inventory,fills,30,-72.1,-74.88284989546216,-69.31715010453783,inventory_limit=5
 Adverse selection,Adaptive - Fixed,fills,30,-53.233333333333334,-56.9255490517814,-49.541117614885266,inventory_limit=5
 Stable,Inventory - Fixed,pnl,30,-1.6260008939904462,-5.2853598307489635,2.0333580427680706,inventory_limit=20
-Stable,Inventory - Fixed,avg_abs_inventory,30,-5.135999999999998,-6.199846328653727,-4.072153671346269,inventory_limit=20
-Stable,Inventory - Fixed,max_drawdown,30,-5.737903004316467,-7.147926907963662,-4.327879100669273,inventory_limit=20
-Stable,Inventory - Fixed,fills,30,6.733333333333333,4.369806167997536,9.09686049866913,inventory_limit=20
 Stable,Adaptive - Inventory,pnl,30,-0.10814177028229703,-0.340487981000805,0.12420444043621094,inventory_limit=20
-Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,inventory_limit=20
-Stable,Adaptive - Inventory,max_drawdown,30,0.07814650742348021,-0.026903548295339502,0.18319656314229993,inventory_limit=20
-Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,inventory_limit=20
 Stable,Adaptive - Fixed,pnl,30,-1.734142664272743,-5.368674777484395,1.9003894489389086,inventory_limit=20
+Stable,Inventory - Fixed,avg_abs_inventory,30,-5.135999999999998,-6.199846328653727,-4.072153671346269,inventory_limit=20
+Stable,Adaptive - Inventory,avg_abs_inventory,30,0.031722222222222235,-0.009208966720018301,0.07265341116446278,inventory_limit=20
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-5.104277777777779,-6.1622653499072655,-4.046290205648292,inventory_limit=20
+Stable,Inventory - Fixed,max_drawdown,30,-5.737903004316467,-7.147926907963662,-4.327879100669273,inventory_limit=20
+Stable,Adaptive - Inventory,max_drawdown,30,0.07814650742348021,-0.026903548295339502,0.18319656314229993,inventory_limit=20
 Stable,Adaptive - Fixed,max_drawdown,30,-5.659756496892987,-7.035709518170032,-4.283803475615942,inventory_limit=20
+Stable,Inventory - Fixed,fills,30,6.733333333333333,4.369806167997536,9.09686049866913,inventory_limit=20
+Stable,Adaptive - Inventory,fills,30,3.1333333333333333,1.1654187761827026,5.101247890483964,inventory_limit=20
 Stable,Adaptive - Fixed,fills,30,9.866666666666667,6.7123036666768545,13.02102966665648,inventory_limit=20
 Adverse selection,Inventory - Fixed,pnl,30,-2.684260630758581,-6.938903585665292,1.5703823241481296,inventory_limit=20
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-5.135999999999998,-6.199846328653727,-4.072153671346269,inventory_limit=20
-Adverse selection,Inventory - Fixed,max_drawdown,30,-10.43356417505923,-13.277427889753685,-7.589700460364775,inventory_limit=20
-Adverse selection,Inventory - Fixed,fills,30,6.733333333333333,4.369806167997536,9.09686049866913,inventory_limit=20
 Adverse selection,Adaptive - Inventory,pnl,30,5.168235591027406,4.444077349813339,5.892393832241472,inventory_limit=20
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,inventory_limit=20
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.812647715868115,-5.535503760482564,-4.089791671253666,inventory_limit=20
-Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,inventory_limit=20
 Adverse selection,Adaptive - Fixed,pnl,30,2.4839749602688244,-1.8324259233219387,6.800375843859587,inventory_limit=20
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-5.135999999999998,-6.199846328653727,-4.072153671346269,inventory_limit=20
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-0.6990555555555555,-0.7579448761083536,-0.6401662350027575,inventory_limit=20
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-5.835055555555554,-6.920368354675823,-4.749742756435285,inventory_limit=20
+Adverse selection,Inventory - Fixed,max_drawdown,30,-10.43356417505923,-13.277427889753685,-7.589700460364775,inventory_limit=20
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-4.812647715868115,-5.535503760482564,-4.089791671253666,inventory_limit=20
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-15.246211890927347,-18.53368383363086,-11.958739948223831,inventory_limit=20
+Adverse selection,Inventory - Fixed,fills,30,6.733333333333333,4.369806167997536,9.09686049866913,inventory_limit=20
+Adverse selection,Adaptive - Inventory,fills,30,-72.3,-75.08768333357314,-69.51231666642686,inventory_limit=20
 Adverse selection,Adaptive - Fixed,fills,30,-65.56666666666666,-68.35526970526384,-62.77806362806948,inventory_limit=20
 Stable,Inventory - Fixed,pnl,30,-0.8820881035189814,-2.0363608356460943,0.27218462860813153,vol_multiplier=0.5
-Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=0.5
-Stable,Inventory - Fixed,max_drawdown,30,-1.4980817960390291,-1.7636852554787006,-1.2324783365993577,vol_multiplier=0.5
-Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=0.5
 Stable,Adaptive - Inventory,pnl,30,-1.8441199076325574,-2.279755889424786,-1.4084839258403288,vol_multiplier=0.5
-Stable,Adaptive - Inventory,avg_abs_inventory,30,1.1351666666666667,0.9700611811595067,1.3002721521738265,vol_multiplier=0.5
-Stable,Adaptive - Inventory,max_drawdown,30,0.6329418600035448,0.4568820113679709,0.8090017086391187,vol_multiplier=0.5
-Stable,Adaptive - Inventory,fills,30,61.56666666666667,58.88350690338771,64.24982642994563,vol_multiplier=0.5
 Stable,Adaptive - Fixed,pnl,30,-2.726208011151539,-3.739470948832195,-1.712945073470883,vol_multiplier=0.5
+Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=0.5
+Stable,Adaptive - Inventory,avg_abs_inventory,30,1.1351666666666667,0.9700611811595067,1.3002721521738265,vol_multiplier=0.5
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-2.2915,-2.7128200562063736,-1.8701799437936268,vol_multiplier=0.5
+Stable,Inventory - Fixed,max_drawdown,30,-1.4980817960390291,-1.7636852554787006,-1.2324783365993577,vol_multiplier=0.5
+Stable,Adaptive - Inventory,max_drawdown,30,0.6329418600035448,0.4568820113679709,0.8090017086391187,vol_multiplier=0.5
 Stable,Adaptive - Fixed,max_drawdown,30,-0.8651399360354844,-1.1085117569888512,-0.6217681150821178,vol_multiplier=0.5
+Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=0.5
+Stable,Adaptive - Inventory,fills,30,61.56666666666667,58.88350690338771,64.24982642994563,vol_multiplier=0.5
 Stable,Adaptive - Fixed,fills,30,73.2,69.48090487047105,76.91909512952896,vol_multiplier=0.5
 Adverse selection,Inventory - Fixed,pnl,30,-1.1793999977543839,-2.810691472413156,0.451891476904388,vol_multiplier=0.5
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=0.5
-Adverse selection,Inventory - Fixed,max_drawdown,30,-4.053071989615394,-4.825689477156866,-3.280454502073923,vol_multiplier=0.5
-Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=0.5
 Adverse selection,Adaptive - Inventory,pnl,30,0.045113685961102115,-0.13031734957971924,0.22054472150192345,vol_multiplier=0.5
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,0.011444444444444427,-0.020482294087984212,0.04337118297687306,vol_multiplier=0.5
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-0.02231350933974075,-0.1326230511842857,0.08799603250480417,vol_multiplier=0.5
-Adverse selection,Adaptive - Inventory,fills,30,1.6333333333333333,0.17395472682378466,3.092711939842882,vol_multiplier=0.5
 Adverse selection,Adaptive - Fixed,pnl,30,-1.1342863117932818,-2.7732188478473088,0.5046462242607455,vol_multiplier=0.5
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=0.5
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,0.011444444444444427,-0.020482294087984212,0.04337118297687306,vol_multiplier=0.5
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-3.415222222222222,-3.85504161275783,-2.9754028316866137,vol_multiplier=0.5
+Adverse selection,Inventory - Fixed,max_drawdown,30,-4.053071989615394,-4.825689477156866,-3.280454502073923,vol_multiplier=0.5
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-0.02231350933974075,-0.1326230511842857,0.08799603250480417,vol_multiplier=0.5
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-4.075385498955135,-4.836352958463792,-3.314418039446478,vol_multiplier=0.5
+Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=0.5
+Adverse selection,Adaptive - Inventory,fills,30,1.6333333333333333,0.17395472682378466,3.092711939842882,vol_multiplier=0.5
 Adverse selection,Adaptive - Fixed,fills,30,13.266666666666667,9.872651530453943,16.66068180287939,vol_multiplier=0.5
 Stable,Inventory - Fixed,pnl,30,-1.8479986390845322,-6.424652530145104,2.728655251976039,vol_multiplier=2
-Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=2
-Stable,Inventory - Fixed,max_drawdown,30,-8.028925896216302,-9.697762690089096,-6.360089102343509,vol_multiplier=2
-Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=2
 Stable,Adaptive - Inventory,pnl,30,-0.11434286115121116,-0.8774859352286323,0.6488002129262099,vol_multiplier=2
-Stable,Adaptive - Inventory,avg_abs_inventory,30,-0.6928333333333334,-0.7475725276108836,-0.6380941390557833,vol_multiplier=2
-Stable,Adaptive - Inventory,max_drawdown,30,-1.2083278602776772,-1.496812597341701,-0.9198431232136535,vol_multiplier=2
-Stable,Adaptive - Inventory,fills,30,-70.1,-72.81640298299007,-67.38359701700992,vol_multiplier=2
 Stable,Adaptive - Fixed,pnl,30,-1.9623415002357434,-6.7497140787191,2.8250310782476125,vol_multiplier=2
+Stable,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=2
+Stable,Adaptive - Inventory,avg_abs_inventory,30,-0.6928333333333334,-0.7475725276108836,-0.6380941390557833,vol_multiplier=2
 Stable,Adaptive - Fixed,avg_abs_inventory,30,-4.1194999999999995,-4.583145309337176,-3.655854690662823,vol_multiplier=2
+Stable,Inventory - Fixed,max_drawdown,30,-8.028925896216302,-9.697762690089096,-6.360089102343509,vol_multiplier=2
+Stable,Adaptive - Inventory,max_drawdown,30,-1.2083278602776772,-1.496812597341701,-0.9198431232136535,vol_multiplier=2
 Stable,Adaptive - Fixed,max_drawdown,30,-9.23725375649398,-10.829060545122537,-7.645446967865421,vol_multiplier=2
+Stable,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=2
+Stable,Adaptive - Inventory,fills,30,-70.1,-72.81640298299007,-67.38359701700992,vol_multiplier=2
 Stable,Adaptive - Fixed,fills,30,-58.46666666666667,-61.831944566881006,-55.10138876645233,vol_multiplier=2
 Adverse selection,Inventory - Fixed,pnl,30,-3.0077434810384753,-9.53428421609322,3.5187972540162678,vol_multiplier=2
-Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=2
-Adverse selection,Inventory - Fixed,max_drawdown,30,-11.194565554042493,-15.1298970488979,-7.259234059187085,vol_multiplier=2
-Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=2
 Adverse selection,Adaptive - Inventory,pnl,30,13.99868956015671,12.101578321303048,15.89580079901037,vol_multiplier=2
-Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-1.0206666666666666,-1.0868088846617412,-0.9545244486715921,vol_multiplier=2
-Adverse selection,Adaptive - Inventory,max_drawdown,30,-15.133170431964329,-16.932887166415657,-13.333453697513002,vol_multiplier=2
-Adverse selection,Adaptive - Inventory,fills,30,-107.7,-110.70193997944814,-104.69806002055186,vol_multiplier=2
 Adverse selection,Adaptive - Fixed,pnl,30,10.990946079118233,3.6901416796703783,18.291750478566087,vol_multiplier=2
+Adverse selection,Inventory - Fixed,avg_abs_inventory,30,-3.4266666666666663,-3.8718522874977785,-2.981481045835554,vol_multiplier=2
+Adverse selection,Adaptive - Inventory,avg_abs_inventory,30,-1.0206666666666666,-1.0868088846617412,-0.9545244486715921,vol_multiplier=2
 Adverse selection,Adaptive - Fixed,avg_abs_inventory,30,-4.447333333333333,-4.914630503282962,-3.9800361633837045,vol_multiplier=2
+Adverse selection,Inventory - Fixed,max_drawdown,30,-11.194565554042493,-15.1298970488979,-7.259234059187085,vol_multiplier=2
+Adverse selection,Adaptive - Inventory,max_drawdown,30,-15.133170431964329,-16.932887166415657,-13.333453697513002,vol_multiplier=2
 Adverse selection,Adaptive - Fixed,max_drawdown,30,-26.32773598600682,-31.277372493570617,-21.378099478443026,vol_multiplier=2
+Adverse selection,Inventory - Fixed,fills,30,11.633333333333333,8.476304040951083,14.790362625715582,vol_multiplier=2
+Adverse selection,Adaptive - Inventory,fills,30,-107.7,-110.70193997944814,-104.69806002055186,vol_multiplier=2
 Adverse selection,Adaptive - Fixed,fills,30,-96.06666666666666,-99.05702585953745,-93.07630747379588,vol_multiplier=2

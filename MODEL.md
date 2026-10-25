@@ -54,6 +54,35 @@ Let h=0.05 CU, κ=0.015 CU per inventory unit. The strategies return centre c an
 
 Bid=c−w and ask=c+w. Estimate `v̂[t] = sqrt(mean((S[i]−S[i−1])²)/Δt)` over at most 30 completed returns; use a fixed 0.04 CU/sqrt(second) prior until two returns exist. Set r=clip(v̂/0.04,0.5,3). It is RMS, not a demeaned sample standard deviation; jumps and drift affect it. There is no use of the scenario's true σ. Warm-up and adaptation lag are intentional limitations. Adaptive changes both spread and inventory sensitivity, so Adaptive−Inventory is a combined effect, not an isolated estimate of widening alone.
 
+### Follow-up controls
+
+The original three-policy comparison remains unchanged. Two additional policies
+form a 2×2 design with Inventory and Adaptive:
+
+| Policy | Centre | Half-width |
+|---|---|---|
+| Width only | S[t] − κq[t] | h r[t] |
+| Skew only | S[t] − κq[t]r[t]² | h |
+
+"Only" refers to the volatility-driven adjustment: both controls still manage
+inventory. The same trailing RMS estimate and quote clipping apply. A factorial
+interaction contrast is Adaptive − Width only − Skew only + Inventory; nonlinear
+fills, clipping and inventory feedback can make it nonzero.
+
+For the matched-price control, `make_tape(..., informative_flow=False)` retains
+the entire Adverse selection price tape, arrival draws and acceptance draws.
+Price generation still uses the original latent informative direction, while
+the direction of the actual arriving customer is independently generated from
+NumPy SeedSequence([seed, 20261025]). This switch does not modify the other four
+scenarios. It removes the information link without changing the realized
+volatility or reference path. The original default generator is numerically
+unchanged. Policies never receive either direction at quote time.
+
+`paired_linear_contrasts` requires complete unique seed-policy rows, finite
+metrics and at least two matched seeds. Missing pairs are rejected rather than
+silently dropped. See [the follow-up plan](RESEARCH_ADDENDUM_PLAN.md) and
+[report](MECHANISM_REPORT.md) for the evaluation design and scope.
+
 The negative inventory skew follows reservation-price intuition. We do not optimize exponential utility, solve an HJB equation or implement the exact Avellaneda–Stoikov policy. There is no global optimality claim.
 
 ## Accounting and metrics

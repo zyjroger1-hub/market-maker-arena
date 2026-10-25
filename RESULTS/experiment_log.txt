@@ -11,19 +11,19 @@ inventory_limit=20
 vol_multiplier=0.5
 vol_multiplier=2
 {
-  "created_utc": "2026-10-25T18:29:46.089022+00:00",
+  "created_utc": "2026-10-25T21:04:34.500092+00:00",
   "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
   "platform": "macOS-15.5-arm64-arm-64bit",
-  "elapsed_seconds": 17.966939416946843,
+  "elapsed_seconds": 18.018205875065178,
   "main_runs": 1500,
   "exploration_runs": 360,
   "sensitivity_runs": 1620,
   "max_accounting_error": 2.546585164964199e-11,
   "source_hashes": {
     "arena/__init__.py": "c202ec1f214fbce78bdd8fe56c2bb190bd38a67427a87f0d92f774112e304745",
-    "arena/engine.py": "1176724e890c121ef671b3a2a689b9dd9a341d0cb8ab73f690b1df63b06454ca",
-    "arena/experiments.py": "5f3592609600c55a4c7cc4fea3ceb5c1eee221d876e1f487476858b27bcc0578",
-    "arena/strategies.py": "040057298696c1df353a1bf432f472868d0da411096715441f855d1aa3148ab0"
+    "arena/engine.py": "f45fd40ffc6ff022a66cd99dbc9ada245532efbfb7fdb02d8a167a8ddb5f81a2",
+    "arena/experiments.py": "3c0a5034abbac76e25561508ddc31b4446ae32729e464ccc26b9c297044fa989",
+    "arena/strategies.py": "1ffa87f2e94097cf5b9901e374ba7bc6993c06b987fecd2d341237bf6a3f9edf"
   },
   "plan_sha256": "10fdaf96b0ee61656aaf189632073f82fc437b52e6aa17bf4363e93ee92ab493"
 }

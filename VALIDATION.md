@@ -4,8 +4,8 @@
 
 ## Automated and numerical checks
 
-- **36 tests**: deterministic buy/sell cash, inventory, notional fees and P&L; terminal inventory marking; exact drawdown example; both inventory cap directions and permitted unwind; pause semantics; quote clipping/nonfinite rejection; seed reproducibility and immutable random tapes; prefix-only observations; historical-only volatility; adverse-selection direction/next-return correlation; distance-dependent acceptance; invalid input rejection; extreme intensity/fee/volatility/cap settings; matched batch completeness.
-- Three Streamlit integration tests cover advance, pause both sides, replay, completing a full match, disabled completion button, changing scenario/reset, a fresh20-seed research run, and changed-but-unapplied controls. They use Streamlit's AppTest, not screenshot mocks.
+- **59 tests**: deterministic buy/sell cash, inventory, notional fees and P&L; terminal inventory marking; exact drawdown example; both inventory cap directions and permitted unwind; pause semantics; quote clipping/nonfinite rejection; seed reproducibility and immutable random tapes; prefix-only observations; historical-only volatility; adverse-selection direction/next-return correlation; distance-dependent acceptance; invalid input rejection; extreme intensity/fee/volatility/cap settings; matched batch completeness.
+- Five Streamlit integration tests cover advance, pause both sides, replay, completing a full match, disabled completion button, changing scenario/reset, a fresh20-seed research run, and changed-but-unapplied controls. They use Streamlit's AppTest, not screenshot mocks.
 - All3,480 study runs check the internal cash/inventory/fee and telescoping P&L identities. See [run manifest](RESULTS/run_manifest.json) and [complete test output](RESULTS/tests-all.txt).
 - An independent script does not call engine accounting helpers: Decimal execution reconstruction checks all 15 saved representative paths and 9,015 step-end marks, along with drawdown and inventory means. It recomputes summary SD/means and 60 paired intervals from saved seed rows, checks seeds, caps, finiteness, source hashes and document links. [Receipt](RESULTS/independent_validation.json).
 
@@ -26,3 +26,34 @@ A 72,324-byte official daily archive was downloaded with a response-size cap and
 ## Verification limits
 
 Browser checks are representative, not exhaustive testing of all seeds, browser sizes, OS versions or widget permutations. Only the tested Mac/Python environment is claimed. Test isolation prevents ordinary strategies from receiving future fields but is not a security sandbox for malicious Python code. End-of-step marking cannot measure intrastep drawdowns. Statistical intervals condition on the assumed market/fill model; they cannot validate it. No real-trading, order-book replay, latency, queue or market-impact verification was performed.
+
+
+## Follow-up verification (updated release)
+
+The extension adds formula checks for the isolated controls, original-tape
+regression fixtures, all-five-policy causal observations after warm-up,
+identical-price/uniform control checks, deterministic independent directions,
+information-link diagnostics, strict incomplete/duplicate/nonfinite pair
+rejection, integer-window/seed validation, five-policy UI execution, information
+switch wiring and restoring saved results. The model/document viewer is tested
+with the follow-up images. The final complete test result is 59 passing tests.
+
+All 2,000 additional runs enforce the accounting identity. The independent
+follow-up audit recomputes **116 additional paired intervals** (including the
+factorial interaction) and verifies seed separation, caps, result/source/plan
+hashes and reused informed-row identity. See
+[follow-up audit](RESULTS/mechanisms/validation.json). The original-study audit
+still checks its 60 intervals and 9,015 representative equity marks.
+
+[Regression receipt](RESULTS/mechanisms/original_regression.json) compares the
+original raw metrics with the initial public commit; policy formulas and price
+tapes for the original study remain unchanged. Main-study results are regenerated
+with current source hashes rather than falsely retaining an old source receipt.
+
+Live UI inspection for this release checked loading the saved five-policy study,
+a fresh 500-run counterfactual experiment (20 seeds × five scenarios × five policies,
+seeds 40000–40019) with the information link switched off, and the
+new mechanism table and figure. These exploratory UI checks are not included
+in the 5,480 planned-study run count. [Browser evidence](RESULTS/figures/mechanism_browser.png).
+The Play quote controls also refresh the preview without advancing a round.
+No cloud interactive deployment is claimed.

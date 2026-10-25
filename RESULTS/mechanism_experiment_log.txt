@@ -1,0 +1,5 @@
+Factorial controls: 3 scenarios x 100 seeds x 5 policies
+{
+  "new_strategy_runs": 2000,
+  "elapsed_seconds": 11.270002957899123
+}

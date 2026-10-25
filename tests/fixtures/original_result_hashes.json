@@ -1,0 +1,56 @@
+{
+  "original_commit": "5abf0eadc587fdac3ee38160fd6c4bf62b4a96e3",
+  "files": {
+    "main_runs.csv": {
+      "sort_keys": [
+        "scenario",
+        "seed",
+        "strategy"
+      ],
+      "sha256": "7e73cf6d045de924cd99f84b57c29ad1925ab69f927f40064092ab5d94ff6fbd",
+      "canonical_sha256": "cd887f19d8b631ff18836257fcadc8b0ec140dde40ce1505c8356bb4e29e1866",
+      "require_byte_identity": true
+    },
+    "summary.csv": {
+      "sort_keys": [
+        "scenario",
+        "strategy"
+      ],
+      "sha256": "b4359796cf9de8442f4c8b81818b3ee277706a48c120b6b18c17e7e2624a1016",
+      "canonical_sha256": "f3a14f06fd7ce3fa27fd98c26342a7959b974f639bce4f0d97da82e056a191e3",
+      "require_byte_identity": false
+    },
+    "paired_comparisons.csv": {
+      "sort_keys": [
+        "scenario",
+        "contrast",
+        "metric"
+      ],
+      "sha256": "5c87b848f000efb4c7b8d46d69110b1c0a8ed797ba0f40ab7f82e9d53259406c",
+      "canonical_sha256": "d9cf68731738d8224354983741c622a9f6368ec2f89ca530ffd8042f8d5cf831",
+      "require_byte_identity": false
+    },
+    "exploration.csv": {
+      "sort_keys": [
+        "skew",
+        "scenario",
+        "seed",
+        "strategy"
+      ],
+      "sha256": "e2902f52b6be5aad682c354cc42f28982c97ed70ba24650516d4a1834cf98108",
+      "canonical_sha256": "99910437deea4979b0427037450c84b844fe39c15b73b7fcb57efa45d22c19d6",
+      "require_byte_identity": true
+    },
+    "sensitivity_runs.csv": {
+      "sort_keys": [
+        "setting",
+        "scenario",
+        "seed",
+        "strategy"
+      ],
+      "sha256": "cb35ec73b0e7b9219ec555780609b738cc9a7fd2a07ec9ec5fd736286054a6fd",
+      "canonical_sha256": "ed771da990cdfb7867ec76c203dda4da616cd78fe1cd31bd1b2b913d45b6029b",
+      "require_byte_identity": true
+    }
+  }
+}

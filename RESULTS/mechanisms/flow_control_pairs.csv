@@ -1,0 +1,21 @@
+scenario,contrast,metric,n,mean_difference,ci_low,ci_high,strategy
+Adverse selection,Informed - Independent,pnl,100,-10.336633850437392,-13.3099015219608,-7.363366178913985,Fixed
+Adverse selection,Informed - Independent,avg_abs_inventory,100,-0.28700000000000014,-0.6802814016612209,0.10628140166122052,Fixed
+Adverse selection,Informed - Independent,max_drawdown,100,1.9736690728891881,0.30985460634855055,3.6374835394298257,Fixed
+Adverse selection,Informed - Independent,fills,100,1.71,0.08982123098438732,3.3301787690156126,Fixed
+Adverse selection,Informed - Independent,pnl,100,-10.561905303863204,-11.403253839700172,-9.720556768026237,Inventory
+Adverse selection,Informed - Independent,avg_abs_inventory,100,-0.011966666666666674,-0.05287424766814835,0.028940914334815,Inventory
+Adverse selection,Informed - Independent,max_drawdown,100,3.6853392609685214,3.2132061474794735,4.157472374457569,Inventory
+Adverse selection,Informed - Independent,fills,100,0.2,-1.2078635825586426,1.6078635825586425,Inventory
+Adverse selection,Informed - Independent,pnl,100,-6.304574764650133,-6.771986216290018,-5.837163313010248,Adaptive
+Adverse selection,Informed - Independent,avg_abs_inventory,100,0.009600000000000004,-0.0072384184530963555,0.026438418453096364,Adaptive
+Adverse selection,Informed - Independent,max_drawdown,100,1.1401852151112326,0.9502278101707192,1.3301426200517459,Adaptive
+Adverse selection,Informed - Independent,fills,100,-0.25,-1.5593265569446513,1.0593265569446513,Adaptive
+Adverse selection,Informed - Independent,pnl,100,-5.774617687025912,-6.638636765194897,-4.910598608856927,Width only
+Adverse selection,Informed - Independent,avg_abs_inventory,100,-0.006399999999999993,-0.05905940881781795,0.04625940881781796,Width only
+Adverse selection,Informed - Independent,max_drawdown,100,0.9054002726982071,0.5194316170553739,1.2913689283410403,Width only
+Adverse selection,Informed - Independent,fills,100,-0.65,-1.7244256682035761,0.4244256682035762,Width only
+Adverse selection,Informed - Independent,pnl,100,-11.056509816099933,-11.590070554521473,-10.522949077678392,Skew only
+Adverse selection,Informed - Independent,avg_abs_inventory,100,-0.0056333333333333365,-0.02278380921330305,0.011517142546636376,Skew only
+Adverse selection,Informed - Independent,max_drawdown,100,5.162984779738272,4.843447876425222,5.482521683051322,Skew only
+Adverse selection,Informed - Independent,fills,100,-0.18,-2.0822284078510735,1.7222284078510737,Skew only

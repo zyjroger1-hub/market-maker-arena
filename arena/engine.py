@@ -53,9 +53,12 @@ class Tape:
     acceptance_u: np.ndarray
     scenario: str
     seed: int
+    flow_mode: str = "Standard"
 
 
-def make_tape(config: Config, scenario: str, seed: int) -> Tape:
+def make_tape(config: Config, scenario: str, seed: int, *, informative_flow: bool = True) -> Tape:
+    if not isinstance(informative_flow, bool):
+        raise ValueError("informative_flow must be a boolean")
     if scenario not in SCENARIOS:
         raise ValueError(f"Unknown scenario {scenario}")
     if not isinstance(seed, int) or not 0 <= seed < 2**32:
@@ -85,9 +88,16 @@ def make_tape(config: Config, scenario: str, seed: int) -> Tape:
     mids = config.initial_mid * np.exp(np.r_[0.0, np.cumsum(increments)])
     if not np.isfinite(mids).all() or mids.min() < 0.1 or mids.max() > 1e8:
         raise ValueError("Price path leaves supported numerical range; reduce horizon/volatility")
+    flow_mode = "Informed" if scenario == "Adverse selection" else "Standard"
+    if scenario == "Adverse selection" and not informative_flow:
+        # Keep the entire price tape (and latent informative sign) unchanged.
+        # Only the arriving customer direction is replaced, using a disjoint stream.
+        control_rng = np.random.default_rng(np.random.SeedSequence([seed, 20261025]))
+        directions = control_rng.choice([-1, 1], size=config.steps)
+        flow_mode = "Independent"
     for a in (mids, directions, arrival_u, acceptance_u):
         a.setflags(write=False)
-    return Tape(mids, directions, arrival_u, acceptance_u, scenario, seed)
+    return Tape(mids, directions, arrival_u, acceptance_u, scenario, seed, flow_mode)
 
 
 @dataclass(frozen=True)

@@ -3,7 +3,7 @@ import math
 import numpy as np
 import pytest
 from arena.engine import Config, Tape, Quote, Ledger, make_tape, observe, advance, simulate, bound_quote, SCENARIOS
-from arena.strategies import Strategy, Manual, STRATEGIES
+from arena.strategies import Strategy, Manual, STRATEGIES, ALL_STRATEGIES
 
 
 def tape(mids, directions, accept=0.0, arrival=0.0):
@@ -60,7 +60,7 @@ def test_same_seed_and_common_inputs():
     a,b=make_tape(c,"Stable",42),make_tape(c,"Stable",42)
     for name in ("mids","directions","arrival_u","acceptance_u"):
         np.testing.assert_array_equal(getattr(a,name),getattr(b,name))
-    for s in STRATEGIES:
+    for s in ALL_STRATEGIES:
         assert simulate(c,a,Strategy(s)).history==simulate(c,b,Strategy(s)).history
     with pytest.raises(ValueError): a.mids[0]=0
 
@@ -75,7 +75,7 @@ def test_future_is_not_in_observation_or_policy():
         oa,ob=observe(a,la,t),observe(b,lb,t)
         assert oa==ob and len(oa.past_mids)==t+1 and oa.past_mids[-1]==oa.mid
         assert not hasattr(oa,"tape")
-        for s in STRATEGIES: assert Strategy(s).quote(oa)==Strategy(s).quote(ob)
+        for s in ALL_STRATEGIES: assert Strategy(s).quote(oa)==Strategy(s).quote(ob)
         advance(a,la,Strategy().quote(oa),t)
         advance(b,lb,Strategy().quote(ob),t)
     assert la.history==lb.history
@@ -112,7 +112,7 @@ def test_acceptance_declines_with_distance():
 @pytest.mark.parametrize("variant",[dict(arrival_rate=0,vol_multiplier=0),dict(fee_bps=100,arrival_rate=100,inventory_limit=1,vol_multiplier=10),dict(distance_decay=1000)])
 def test_extremes_finite_and_bounded(scenario,variant):
     c=Config(steps=120,**variant)
-    for name in STRATEGIES:
+    for name in ALL_STRATEGIES:
         l=simulate(c,make_tape(c,scenario,19),Strategy(name))
         assert all(math.isfinite(v) for v in l.metrics().values())
         assert l.metrics()["max_abs_inventory"]<=c.inventory_limit

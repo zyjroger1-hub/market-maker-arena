@@ -2,6 +2,7 @@
 from pathlib import Path
 from dataclasses import asdict
 import json
+import hashlib
 import re
 import pandas as pd
 import plotly.graph_objects as go
@@ -9,11 +10,11 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import streamlit as st
 from arena.engine import Config,SCENARIOS,make_tape,Ledger,observe,advance,bound_quote
-from arena.strategies import Strategy,Manual,STRATEGIES
+from arena.strategies import Strategy,Manual,STRATEGIES,ALL_STRATEGIES
 from arena.experiments import run_batch,summarize,paired_comparisons
 
 ROOT=Path(__file__).resolve().parent
-COLORS={"You":"#A85F13","Fixed":"#728399","Inventory":"#245E87","Adaptive":"#724B88"}
+COLORS={"You":"#A85F13","Fixed":"#728399","Inventory":"#245E87","Adaptive":"#724B88","Width only":"#B47C20","Skew only":"#527A44"}
 st.set_page_config(page_title="Market Maker Arena",page_icon="↔",layout="wide")
 st.markdown("""<style>
 .block-container {max-width:1250px;padding-top:3.8rem;padding-bottom:2rem;}
@@ -51,7 +52,7 @@ if mode=="Play":
         st.header("Match settings")
         scenario=st.selectbox("Market scenario",SCENARIOS,key="play_scenario")
         seed=int(st.number_input("Random seed",min_value=0,max_value=2**31-1,value=42,step=1,key="play_seed"))
-        opponent=st.selectbox("Algorithm",["Adaptive","Inventory","Fixed"])
+        opponent=st.selectbox("Algorithm",["Adaptive","Inventory","Fixed","Width only","Skew only"])
         st.caption("Each match: 600 one-second steps. Changing match settings restarts the match. Replay uses the same hidden tape.")
         restart=st.button("Replay from start",width="stretch")
         with st.expander("Scenario guide"):
@@ -78,7 +79,7 @@ if mode=="Play":
         st.info("You are short inventory. A higher quote centre makes buying more likely and selling less likely. It also gives up some price on purchases.")
     else:
         st.info("You are flat. A narrower spread attracts more fills; a wider spread earns more per accepted quote but misses more customers.")
-    with st.form("quote_form"):
+    with st.container(border=True):
         a,b=st.columns(2)
         with a:
             full_spread=st.slider("Full spread (CU)",.02,.60,.10,.02,help="Bid/ask separation before boundary clipping. 0.10 means 0.05 on each side.")
@@ -88,7 +89,7 @@ if mode=="Play":
         bid_on=d.checkbox("Bid (buy)",value=True)
         ask_on=e.checkbox("Ask (sell)",value=True)
         steps_round=f.selectbox("Steps per round",[10,25,50,100],index=2)
-        submitted=st.form_submit_button("Advance round",type="primary",disabled=step>=c.steps,width="stretch")
+        submitted=st.button("Advance round",type="primary",disabled=step>=c.steps,width="stretch")
     manual=Manual(full_spread/2,offset,bid_on,ask_on)
     preview=bound_quote(manual.quote(observe(game["tape"],you,step)),mid,c)
     bp=preview.bid if you.inventory<c.inventory_limit else None
@@ -135,12 +136,18 @@ if mode=="Play":
 
 elif mode=="Research":
     st.subheader("Strategy research lab")
-    st.write("Compare the same market paths across three policies. Repeated seeds measure uncertainty within this model; they do not establish real-world returns.")
+    st.write("Compare matched market paths, isolate volatility controls, and inspect the difference between noisy and informative customer flow. Results are model-conditional simulations.")
+    saved_choice=st.selectbox("Saved study",["Original study · 3 policies","Mechanism study · 5 policies"])
+    if st.button("Load saved results"):
+        st.session_state.pop("research",None)
+    st.caption("Load saved results replaces the last live run. New sidebar experiments retain their applied settings for export.")
     with st.sidebar:
         st.header("Experiment controls")
         scenarios=st.multiselect("Scenarios",SCENARIOS,default=list(SCENARIOS))
         n=st.select_slider("Replicates per scenario",[20,50,100,200],value=100)
         seed_start=int(st.number_input("First evaluation seed",0,2**31-1000,10000))
+        include_controls=st.checkbox("Include width/skew controls",value=False,
+            help="Adds Width only and Skew only to isolate volatility-driven width and inventory skew. Both retain inventory management.")
         width=st.slider("Base half-spread (CU)",.02,.20,.05,.01,help="Fixed and Inventory use this width; Adaptive scales it by trailing volatility.")
         skew=st.slider("Inventory skew (CU per unit)",.0,.04,.015,.005,format="%.3f",help="Each long unit lowers the quote centre by this amount. Adaptive additionally scales by squared trailing volatility.")
         with st.expander("Costs and market assumptions"):
@@ -148,13 +155,20 @@ elif mode=="Research":
             rate=st.slider("Customer intensity (/second)",.1,2.0,.8,.1)
             cap=st.slider("Inventory cap (units)",1,20,10)
             vm=st.slider("Volatility multiplier",.5,2.0,1.0,.1)
+            informative=st.checkbox("Informative customer flow",value=True,
+                help="Only affects Adverse selection. Off keeps exactly the same price and acceptance tapes, replacing customer directions with independent draws.")
         run=st.button("Run paired experiment",type="primary",width="stretch",disabled=not scenarios)
         st.caption("The published report uses fixed defaults. These controls create exploratory results; keep fresh seeds for later evaluation.")
     c=Config(fee_bps=fee,arrival_rate=rate,inventory_limit=cap,vol_multiplier=vm)
-    requested=dict(config=asdict(c),scenarios=scenarios,n=n,seed_start=seed_start,half_spread=width,skew=skew)
+    names=ALL_STRATEGIES if include_controls else STRATEGIES
+    requested=dict(config=asdict(c),scenarios=scenarios,n=n,seed_start=seed_start,half_spread=width,skew=skew,
+                   strategy_names=list(names),informative_flow=informative,
+                   strategy_parameters=dict(half_spread=width,skew=skew,window=30,prior_vol=.04),
+                   engine_sha256=hashlib.sha256((ROOT/"arena/engine.py").read_bytes()).hexdigest())
     if run:
         bar=st.progress(0,text="Running matched price and customer tapes…")
-        raw=run_batch(c,scenarios,list(range(seed_start,seed_start+n)),width,skew,progress=bar.progress)
+        raw=run_batch(c,scenarios,list(range(seed_start,seed_start+n)),width,skew,progress=bar.progress,
+                      strategy_names=names,informative_flow=informative)
         st.session_state.research=(requested,raw)
         bar.empty()
     if "research" in st.session_state:
@@ -163,11 +177,25 @@ elif mode=="Research":
         st.caption(f"Last run · {len(raw):,} strategy runs · {used['n']} seeds/scenario · seeds {used['seed_start']}–{used['seed_start']+used['n']-1} · 600 seconds each")
         with st.expander("Exact last-run configuration"): st.json(used)
         source_label="Your exploratory run"
+        applied=used
     else:
-        raw=pd.read_csv(ROOT/"RESULTS/main_runs.csv")
-        source_label="Saved main evaluation · fixed defaults · 100 seeds per scenario"
-        st.info("Showing the completed main experiment. Use Run paired experiment to generate your own offline results.")
+        mechanism=saved_choice.startswith("Mechanism")
+        saved_path="RESULTS/mechanisms/ablation_runs.csv" if mechanism else "RESULTS/main_runs.csv"
+        raw=pd.read_csv(ROOT/saved_path)
+        manifest_path="RESULTS/mechanisms/manifest.json" if mechanism else "RESULTS/config.json"
+        metadata=json.loads((ROOT/manifest_path).read_text())
+        parameters=metadata["strategy_parameters"] if mechanism else metadata["strategy"]
+        applied=dict(config=metadata["config"] if mechanism else metadata["base_config"],
+                     scenarios=list(raw.scenario.unique()),n=int(raw.groupby(["scenario","strategy"]).size().iloc[0]),
+                     seed_start=int(raw.seed.min()),strategy_names=list(raw.strategy.unique()),
+                     half_spread=parameters["half_spread"],skew=parameters["skew"],
+                     strategy_parameters=parameters,informative_flow=True,saved_source=saved_path)
+        source_label=f"{saved_choice} · fixed defaults · 100 matched seeds per scenario · first seed {applied['seed_start']}"
+        st.info("Showing a saved evaluation. Use Run paired experiment to generate a new offline result.")
     st.caption(source_label)
+    st.caption("Width only adjusts volatility-driven width; Skew only adjusts volatility-driven skew. Both also manage inventory.")
+    if not applied["informative_flow"]:
+        st.warning("Adverse selection uses independent customer flow in this run. Its reference path, volatility, arrival and acceptance draws are unchanged.")
     selected=st.selectbox("Inspect scenario",raw.scenario.unique())
     selected_raw=raw[raw.scenario==selected]
     summary=summarize(selected_raw)
@@ -179,7 +207,7 @@ elif mode=="Research":
     a,b=st.tabs(["P&L distribution","Inventory / outcome"])
     with a:
         fig=px.box(selected_raw,x="strategy",y="pnl",color="strategy",color_discrete_map=COLORS,points=False,
-                   category_orders={"strategy":list(STRATEGIES)},labels={"strategy":"Strategy","pnl":"Net P&L (CU)"})
+                   category_orders={"strategy":list(raw.strategy.unique())},labels={"strategy":"Strategy","pnl":"Net P&L (CU)"})
         fig.update_layout(showlegend=False,title="Outcome distribution")
         st.plotly_chart(chart_style(fig),width="stretch")
     with b:
@@ -194,16 +222,12 @@ elif mode=="Research":
     metric=st.selectbox("Compare metric",["pnl","avg_abs_inventory","max_drawdown","fills"])
     st.dataframe(pairs[pairs.metric==metric][["contrast","n","mean_difference","ci_low","ci_high"]].style.format(precision=3),hide_index=True,width="stretch")
     with st.expander("Example trajectory and drawdown",expanded=False):
-        if "research" in st.session_state:
-            used,_=st.session_state.research
-            ec=Config(**used["config"]); eseed=used["seed_start"]
-            ew,es=used["half_spread"],used["skew"]
-        else:
-            ec=Config(); eseed=10000; ew=.05; es=.015
+        ec=Config(**applied["config"]);eseed=applied["seed_start"]
+        ew,es=applied["half_spread"],applied["skew"]
         from arena.engine import simulate
-        tape=make_tape(ec,selected,eseed)
+        tape=make_tape(ec,selected,eseed,informative_flow=applied["informative_flow"])
         fig=make_subplots(rows=2,cols=1,shared_xaxes=True,subplot_titles=("Inventory","Drawdown from running equity peak (CU)"))
-        for name in STRATEGIES:
+        for name in applied["strategy_names"]:
             tr=pd.DataFrame(simulate(ec,tape,Strategy(name,ew,es)).history)
             fig.add_trace(go.Scatter(x=tr.time_s,y=tr.inventory,name=name,line=dict(color=COLORS[name],shape="hv")),row=1,col=1)
             dd=tr.equity.cummax()-tr.equity
@@ -214,8 +238,15 @@ elif mode=="Research":
     a,b=st.columns(2)
     a.download_button("Download seed-level results",raw.to_csv(index=False),"research_runs.csv","text/csv")
     # Export the applied configuration, never the pending controls.
-    export=st.session_state.research[0] if "research" in st.session_state else json.loads((ROOT/"RESULTS/config.json").read_text())
+    export=applied
     b.download_button("Download applied configuration",json.dumps(export,indent=2),"research_config.json","application/json")
+    with st.expander("Mechanism check · same prices, different information"):
+        st.write("This saved follow-up holds each stress reference path and both uniform tapes exactly fixed, and replaces only customer directions. Negative informed-minus-independent P&L differences measure damage from the information link within this model.")
+        fp=pd.read_csv(ROOT/"RESULTS/mechanisms/flow_control_pairs.csv")
+        st.dataframe(fp[fp.metric=="pnl"][["strategy","n","mean_difference","ci_low","ci_high"]].style.format(precision=3),hide_index=True,width="stretch")
+        st.caption("100 matched seeds (30000–30099), unadjusted 95% t intervals. See MECHANISM_REPORT.md for the complete factorial contrasts and limitations.")
+        st.image(str(ROOT/"RESULTS/figures/flow_control.png"),caption="Identical reference paths · counterfactual simulated fills")
+        st.download_button("Download matched-flow study",(ROOT/"RESULTS/mechanisms/flow_control_runs.csv").read_bytes(),"flow_control_runs.csv","text/csv")
 
 else:
     st.subheader("A transparent toy market")
@@ -224,6 +255,7 @@ else:
 - **Fixed:** symmetric quotes around the current reference.
 - **Inventory:** shift the centre down when long and up when short.
 - **Adaptive:** also widen quotes when trailing price changes grow, and strengthen the inventory skew.
+- **Width only / Skew only:** isolate these two volatility controls; both still manage inventory.
 - **Fair comparison:** all dealers face the same reference prices, customer direction, arrival draws and acceptance draws. Each dealer trades in a separate counterfactual market; they do not compete for the same unit.
 - **Causal information:** policies see the current reference and past prices only. The adaptive policy has a fixed warm-up estimate and a 30-return trailing window.
 - **Real adverse selection:** in the stress scenario a customer buy predicts an upward next-price shock; the dealer sells before the price rises. This information link is absent in the ordinary high-volatility scenario.
@@ -236,7 +268,7 @@ else:
     st.markdown("""[Market making · Citadel Securities](https://www.citadelsecurities.com/what-we-do/what-is-a-market-maker/) · [Avellaneda & Stoikov (2008)](https://math.nyu.edu/inmemoriam/avellaneda/HighFrequencyTrading.pdf) · [Fill assumptions · HftBacktest](https://hftbacktest.readthedocs.io/en/latest/order_fill.html) · [Public data · Binance](https://github.com/binance/binance-public-data)""")
     st.write("The strategies borrow the intuition of inventory-sensitive reservation prices; this project does not solve the Avellaneda–Stoikov control problem.")
     st.markdown("**Saved research and learning materials**")
-    for filename in ("RESEARCH_REPORT.md","MODEL.md","LEARNING_GUIDE_ZH.md","INTERVIEW_PREP.md"):
+    for filename in ("RESEARCH_REPORT.md","MECHANISM_REPORT.md","MODEL.md","LEARNING_GUIDE_ZH.md","INTERVIEW_PREP.md"):
         p=ROOT/filename
         if p.exists():
             with st.expander(filename):

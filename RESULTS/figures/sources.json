@@ -3,5 +3,7 @@
   "paired_pnl.png": "paired_comparisons.csv",
   "risk_opportunity.png": "summary.csv",
   "example_path.png": "representative_paths.csv; scenario=High volatility; seed=10000",
-  "sensitivity.png": "sensitivity_summary.csv"
+  "sensitivity.png": "sensitivity_summary.csv",
+  "ablation_effects.png": "mechanisms/ablation_pairs.csv; metric=pnl",
+  "flow_control.png": "mechanisms/flow_control_summary.csv and flow_control_pairs.csv; metric=pnl"
 }

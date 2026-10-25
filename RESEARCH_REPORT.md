@@ -54,13 +54,13 @@ In Trend the same P&L contrast is +0.671 CU (95% paired CI -2.556 to +3.897); th
 
 In High volatility, Adaptive versus Inventory reduces mean fills from 164.92 to 110.80, mean absolute inventory from 1.201 to 0.707, and mean maximum drawdown from 3.219 to 1.133 CU. The paired P&L change is -0.917 CU (95% paired CI -1.584 to -0.251). Here protection costs average profit. The strategy cannot anticipate regime changes or jumps; its estimates lag.
 
-Adaptive changes both spread and skew strength, so this is a combined policy effect. An isolated widening effect would need a separate ablation; none is claimed.
+Adaptive changes both spread and skew strength, so this is a combined policy effect. The original study does not isolate widening alone. The [follow-up mechanism study](MECHANISM_REPORT.md) now adds width/skew controls on fresh seeds.
 
 ### 3. Informative fills change the economics
 
 In Adverse selection, Inventory averages -4.838 CU and Adaptive -0.305 CU. Their paired difference is +4.533 CU (95% paired CI +4.085 to +4.982). Mean fills fall from 164.92 to 93.01. Near S=100 the imposed information link creates approximately 0.068 CU of unfavorable immediate directional movement for a dealer fill, before the quoted edge and fees. Wider, less frequent quotes can reduce exposure to this mechanism.
 
-Adaptive's marginal 95% interval for mean P&L is [-0.589, -0.022] CU. Improvement over another policy does not mean profitability. The adverse scenario differs from Stable in both volatility and directional information; their whole P&L difference is not an isolated causal estimate of adverse selection.
+Adaptive's marginal 95% interval for mean P&L is [-0.589, -0.022] CU. Improvement over another policy does not mean profitability. The adverse scenario differs from Stable in both volatility and directional information; their whole P&L difference is not an isolated causal estimate of adverse selection. The follow-up holds the realized stress price paths fixed and replaces only customer directions.
 
 ![Paired P&L effects](RESULTS/figures/paired_pnl.png)
 
@@ -96,7 +96,7 @@ Every run verifies cash, inventory and fees plus the exact P&L decomposition int
 
 The largest limitation is the assumed fill curve. There is no queue, competitor, latency, partial fill, impact, financing or calibrated order flow. The dealer is a price taker in independent counterfactual worlds. Terminal marks omit executable liquidation costs; unclosed inventory must not be described as realized cash profit. Synthetic stress severities, 600-step horizon and single-window RMS estimator are modeling choices. Repeated random seeds reduce Monte Carlo noise, not model risk. A one-day BTC context sample is not a representative calibration dataset.
 
-Next research should first isolate width versus skew in an ablation, test several information-link strengths at matched volatility, and add explicit executable liquidation costs. Only after those checks should richer historical order-book replay or queue modeling be considered.
+The [follow-up report](MECHANISM_REPORT.md) adds width/skew ablations and an identical-price information control using 2,000 additional strategy runs. It also shows that some mean-profit rankings change on fresh seeds, so treat the original rankings as conditional on their sampled paths. Remaining work includes testing more information-link strengths and policy coefficients, explicit executable liquidation costs, and richer historical order-book/queue modeling.
 
 ## Primary reading and reproducibility
 

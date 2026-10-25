@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "original_commit": "5abf0eadc587fdac3ee38160fd6c4bf62b4a96e3",
+  "numerical_precision": "Canonical CSV at 10 significant digits; key order normalized",
+  "files": {
+    "main_runs.csv": {
+      "canonical_matches": true,
+      "byte_identical": true
+    },
+    "summary.csv": {
+      "canonical_matches": true,
+      "byte_identical": true
+    },
+    "paired_comparisons.csv": {
+      "canonical_matches": true,
+      "byte_identical": false
+    },
+    "exploration.csv": {
+      "canonical_matches": true,
+      "byte_identical": true
+    },
+    "sensitivity_runs.csv": {
+      "canonical_matches": true,
+      "byte_identical": true
+    }
+  },
+  "raw_runs": "Byte-identical main/exploration/sensitivity CSVs, including all original metric fields"
+}

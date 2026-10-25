@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "new_strategy_runs": 2000,
+  "ablation_rows": 1500,
+  "flow_control_rows": 1000,
+  "reused_informed_rows": 500,
+  "paired_intervals_recomputed": 116,
+  "seed_pairs_with_identical_prices_and_uniforms": 100,
+  "checks": "Disjoint seeds, complete counts, finiteness, inventory caps, per-run accounting residuals, reused row identity, independent means/SD/linear contrast intervals, source/plan/result hashes"
+}

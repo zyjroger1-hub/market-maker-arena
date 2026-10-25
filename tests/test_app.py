@@ -49,3 +49,33 @@ def test_match_settings_reset():
     assert at.session_state["match"]["step"]==0
     assert at.session_state["match"]["tape"].scenario=="Adverse selection"
     assert not at.exception
+
+
+def test_five_policy_flow_control_and_saved_restore():
+    at=AppTest.from_file(APP,default_timeout=90).run()
+    at.radio[0].set_value("Research").run()
+    at.multiselect[0].set_value(["Adverse selection"])
+    at.select_slider[0].set_value(20)
+    next(x for x in at.checkbox if x.label=="Include width/skew controls").check()
+    next(x for x in at.checkbox if x.label=="Informative customer flow").uncheck()
+    button(at,"Run paired experiment").click().run(timeout=90)
+    assert not at.exception
+    cfg,raw=at.session_state['research']
+    assert len(raw)==100 and len(cfg['strategy_names'])==5 and cfg['informative_flow'] is False
+    # Verify that the UI forwards the information switch to the engine.
+    from arena.engine import Config,make_tape,simulate
+    from arena.strategies import Strategy
+    expected=simulate(Config(),make_tape(Config(),'Adverse selection',cfg['seed_start'],informative_flow=False),Strategy('Fixed')).metrics()['pnl']
+    assert raw[(raw.seed==cfg['seed_start'])&(raw.strategy=='Fixed')].iloc[0].pnl==expected
+    next(x for x in at.selectbox if x.label=='Saved study').set_value('Mechanism study · 5 policies').run()
+    button(at,'Load saved results').click().run()
+    assert 'research' not in at.session_state
+    assert set(at.dataframe[0].value['Strategy'])=={'Fixed','Inventory','Adaptive','Width only','Skew only'}
+    assert not at.exception
+
+
+def test_model_documents_include_followup_without_broken_images():
+    at=AppTest.from_file(APP,default_timeout=60).run()
+    at.radio[0].set_value('Model & evidence').run()
+    assert any(x.label=='MECHANISM_REPORT.md' for x in at.expander)
+    assert not at.exception

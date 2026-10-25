@@ -49,3 +49,18 @@ First isolate spread widening from volatility-scaled skew, compare informative a
 3. Open Research, compare stable and adverse regimes; show distribution and paired interval.
 4. Explain one disappointing result and one modeling limitation.
 5. Open the deterministic accounting test. State clearly which parts you personally ran, checked or modified and which came from AI assistance.
+
+
+## Follow-up discussion prompts
+
+- How do Width only and Skew only identify the controls changed by Adaptive?
+  Explain the 2×2 policy table and why an interaction need not be zero.
+- Why is identical-price independent flow a better mechanism control than
+  comparing Stable and Adverse selection? Identify exactly which tape changed.
+- Why did a fresh-seed replication weaken the original mean-profit ranking?
+  Distinguish unstable path averages from the much more consistent inventory
+  reduction, and avoid selecting only the favorable seed batch.
+
+These are discussion prompts beyond the original ten questions. The follow-up
+was also AI-assisted; personally reproduce and explain it before claiming it as
+an independent contribution.
