@@ -1,0 +1,7 @@
+{
+  "pnl_distributions.png": "main_runs.csv",
+  "paired_pnl.png": "paired_comparisons.csv",
+  "risk_opportunity.png": "summary.csv",
+  "example_path.png": "representative_paths.csv; scenario=High volatility; seed=10000",
+  "sensitivity.png": "sensitivity_summary.csv"
+}

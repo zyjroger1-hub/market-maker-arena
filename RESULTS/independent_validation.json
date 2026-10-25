@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "main_runs": 1500,
+  "exploration_runs": 360,
+  "sensitivity_runs": 1620,
+  "independently_reconstructed_paths": 15,
+  "saved_step_end_marks_checked": 9015,
+  "max_decimal_cash_residual": 1.78695365e-11,
+  "max_decimal_equity_residual": 1.84495365e-11,
+  "paired_intervals_checked": 60,
+  "checks": "Counts, seed separation, finiteness, caps, independent cash/equity reconstruction, drawdown, inventory means, summary SD, paired intervals, source/plan hashes, Markdown links"
+}

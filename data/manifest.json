@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "retrieved_utc": "2026-10-25T18:10:01.048101+00:00",
+  "source": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2025-01-06.zip",
+  "checksum_source": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2025-01-06.zip.CHECKSUM",
+  "sha256": "4332f1e3f7db5d1aacaa7a21bf8b1e72ede11906eee34b2916c9933610d034a5",
+  "archive_bytes": 72324,
+  "rows": 1440,
+  "timestamp_unit": "microseconds since Unix epoch",
+  "interval": "1 minute",
+  "estimates": {
+    "calibration_first_12h": {
+      "n_returns": 719,
+      "log_return_sd_per_sqrt_minute": 0.0004693648756805893,
+      "normalized_price100_sd_per_minute": 0.047192397279877896
+    },
+    "heldout_last_12h": {
+      "n_returns": 719,
+      "log_return_sd_per_sqrt_minute": 0.0006651685683236905,
+      "normalized_price100_sd_per_minute": 0.06765697030037315
+    }
+  },
+  "use": "Descriptive context only; no simulator parameter fitted to this sample",
+  "license": "Binance Vision dataset terms, CC BY-NC-SA 4.0; educational non-commercial use",
+  "terms_url": "https://raw.githubusercontent.com/binance/binance-public-data/master/TERMS_AND_CONDITIONS.md",
+  "cleaning": "Validated 12 columns, 1440 unique gap-free timestamps, positive consistent OHLC; retained UTC open time and close. No rows removed or imputed."
+}
